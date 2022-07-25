@@ -9560,9 +9560,9 @@ svgo@^1.0.0, svgo@^1.3.0:
     util.promisify "~1.0.0"
 
 systeminformation@^4.26.10:
-  version "4.27.11"
-  resolved "https://registry.npmjs.org/systeminformation/-/systeminformation-4.27.11.tgz"
-  integrity sha512-U7bigXbOnsB8k1vNHS0Y13RCsRz5/UohiUmND+3mMUL6vfzrpbe/h4ZqewowB+B+tJNnmGFDj08Z8xGfYo45dQ==
+  version "4.34.23"
+  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-4.34.23.tgz#54c54ced5adc49c27cda953b73c0819ed56edd45"
+  integrity sha512-33+lQwlLxXoxy0o9WLOgw8OjbXeS3Jv+pSl+nxKc2AOClBI28HsdRPpH0u9Xa9OVjHLT9vonnOMw1ug7YXI0dA==
 
 tapable@^1.0.0, tapable@^1.1.0:
   version "1.1.3"
