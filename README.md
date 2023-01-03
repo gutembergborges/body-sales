@@ -1,8 +1,9 @@
 # Body Vendas / Body Sales (bodysales)
 Aplicativo Body Vendas / Body Sales App
 
-## Setup your PC (if you haven't in your pc)
-### Node / npm
+## Requirements
+If you haven't in your pc:
+### Node 10.16.0 / npm
 Install Node 10.16.0 / npm 6.9.0
 Recommends using nvm (```brew install nvm``` using brew in Mac OS)
 ```
