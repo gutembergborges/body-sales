@@ -16,6 +16,9 @@
       <q-input filled color="red" v-model="description" label="Descrição" placeholder="Busca na Body"
         use-input input-debounce="0" @input="getProductsByFilter" />
 
+      <q-input filled color="red" v-model="description" label="Código" placeholder="Busca na Body"
+      use-input input-debounce="0" @input="getProductsByFilter" />
+
       <q-infinite-scroll @load="onLoadProducts" class="q-mt-md row">
         <div v-for="(product, index) in products" :key="index" class="q-gutter-xs-xs col-12">
           <q-card class="my-card">
