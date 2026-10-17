@@ -14,7 +14,10 @@
       </q-select>
 
       <q-input filled color="red" v-model="description" label="Descrição" placeholder="Busca na Body"
-        use-input input-debounce="0" @input="getProductsByFilter" />
+        debounce="400" @input="getProductsByFilter" />
+
+      <q-input filled color="red" v-model="code" label="Código" placeholder="Código do produto"
+        debounce="400" @input="getProductsByFilter" />
 
       <q-infinite-scroll @load="onLoadProducts" class="q-mt-md row">
         <div v-for="(product, index) in products" :key="index" class="q-gutter-xs-xs col-12">
@@ -64,6 +67,7 @@ export default {
     return {
       group: { Codigo_Grupo: 13, Descricao: "ALBUMINA", urlGrupo: null },
       description: "",
+      code: "",
       page: 1,
     }
   },
@@ -72,6 +76,10 @@ export default {
     this.$store.dispatch('produtos/obterGrupos', {})
   },
   computed: {
+    groupCode() {
+      // The group select is clearable, so group can be null.
+      return this.group ? this.group.Codigo_Grupo : null
+    },
     groupsFiltered() {
       return this.$store.getters['produtos/getGroupsFiltered']
     },
@@ -99,15 +107,17 @@ export default {
     getProductsByFilter() {
       this.page = 1
       this.$store.dispatch('produtos/filtrar', {
-        group: this.group.Codigo_Grupo,
+        group: this.groupCode,
         description: this.description,
+        code: this.code,
         page: this.page
       })
     },
     getProductsByPagination(pagination) {
       this.$store.dispatch('produtos/paginar', {
-        group: this.group.Codigo_Grupo,
+        group: this.groupCode,
         description: this.description,
+        code: this.code,
         page: pagination
       })
     },
