@@ -75,6 +75,7 @@ export function filtrar(store, params) {
   parameters.set('pagina', params.page);
   parameters.set('grupo', params.group);
   parameters.set('descricao', params.description);
+  if (params.code) parameters.set('codigo', params.code);
 
   return new Promise((resolve, reject) => {
     // axios.post(`http://escoladmart.com/guto2/posseidom.php?op=ObterProdutosPG`, {
@@ -114,6 +115,7 @@ export function paginar(store, params) {
   parameters.set('pagina', params.page);
   parameters.set('grupo', params.group);
   parameters.set('descricao', params.description);
+  if (params.code) parameters.set('codigo', params.code);
 
   return new Promise((resolve, reject) => {
     // axios.post(`http://escoladmart.com/guto2/posseidom.php?op=ObterProdutosPG`, {
